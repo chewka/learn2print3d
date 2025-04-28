@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn to Print 3D</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to top, #d8e2b3, #f7c59f, #d5a6bd);
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      font-family: 'Open Sans', sans-serif;
+      animation: fadePage 2s ease forwards;
+      opacity: 0;
+    }
+    .title {
+      position: absolute;
+      top: 5vh;
+      width: 100%;
+      text-align: center;
+      font-size: 2.5rem;
+      font-family: 'Comfortaa', cursive;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      z-index: 10;
+      animation: fadeSlide 3s ease-out forwards;
+      opacity: 0;
+    }
+    .subtitle {
+      position: absolute;
+      top: 13vh;
+      width: 100%;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+      color: white;
+      font-size: 1.2rem;
+      opacity: 0;
+      animation: fadeSlide 3s ease-out forwards;
+    }
+    .contact-box {
+      position: absolute;
+      top: 20vh;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f9f6ef;
+      color: #555;
+      font-family: 'Comfortaa', cursive;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      padding: 12px 24px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      animation: bobCloud 3s infinite ease-in-out;
+      z-index: 9;
+    }
+    .contact-box:hover {
+      background: #f0f0f0;
+      transform: translateX(-50%) scale(1.05);
+    }
+    .sun {
+      background: radial-gradient(circle at center, #fffb91, #ffe36e);
+      width: 3.5cm;
+      height: 3.5cm;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 3.5cm;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 60px rgba(255, 255, 100, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .sunglasses {
+      position: absolute;
+      width: 64px;
+      height: 16px;
+      top: 40%;
+      animation: bob 2s infinite ease-in-out;
+    }
+    .hill {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 30vh;
+      z-index: 1;
+      animation: floatHill 10s ease-in-out infinite alternate;
+    }
+    .hill svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .cactus {
+      position: absolute;
+      bottom: 15vh;
+      left: 15%;
+      height: 30vh;
+      z-index: 2;
+      animation: swayCactus 6s ease-in-out infinite alternate;
+      transform-origin: bottom center;
+    }
+    .cactus svg {
+      height: 100%;
+    }
+    .bottom-text {
+      position: absolute;
+      bottom: 5vh;
+      left: 5vw;
+      right: 5vw;
+      color: white;
+      font-size: 1rem;
+      z-index: 5;
+      font-family: 'Open Sans', sans-serif;
+      text-align: center;
+      animation: fadeInText 4s ease-out forwards;
+      opacity: 0;
+    }
+    .bottom-text a {
+      color: #3b7d3c;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .bottom-text a:hover {
+      text-decoration: underline;
+    }
+    @keyframes fadePage { 0% { opacity: 0; } 100% { opacity: 1; } }
+    @keyframes swayCactus { 0% { transform: rotate(0deg); } 50% { transform: rotate(2deg); } 100% { transform: rotate(-2deg); } }
+    @keyframes floatHill { 0% { transform: translateY(0); } 100% { transform: translateY(-10px); } }
+    @keyframes fadeSlide { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInText { 0% { opacity: 0; } 100% { opacity: 1; } }
+    @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+    @keyframes bobCloud { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-6px); } }
+  </style>
+</head>
+<body>
+  <div class="title">Learn to Print 3D</div>
+  <div class="subtitle">Discover how easy it is to start 3D printing today with simple tools and expert tips.</div>
+  <div class="contact-box">Contact Me</div>
+  <div class="sun">
+    <div class="sunglasses">
+      <svg viewBox="0 0 64 16" width="64" height="16">
+        <rect x="0" y="4" width="4" height="4" fill="black"/>
+        <rect x="4" y="8" width="4" height="4" fill="black"/>
+        <rect x="8" y="8" width="4" height="4" fill="black"/>
+        <rect x="12" y="4" width="4" height="4" fill="black"/>
+        <rect x="16" y="4" width="4" height="4" fill="black"/>
+        <rect x="20" y="8" width="4" height="4" fill="black"/>
+        <rect x="24" y="8" width="4" height="4" fill="black"/>
+        <rect x="28" y="4" width="4" height="4" fill="black"/>
+      </svg>
+    </div>
+  </div>
+  <div class="hill">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <path fill="#f9f6ef" d="M0,160 C360,80 1080,240 1440,160 L1440,320 L0,320 Z"></path>
+    </svg>
+  </div>
+  <div class="cactus">
+    <svg viewBox="0 0 64 128" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+      <rect x="28" y="0" width="8" height="64" fill="#3b7d3c" />
+      <rect x="16" y="32" width="8" height="24" fill="#3b7d3c" />
+      <rect x="40" y="32" width="8" height="24" fill="#3b7d3c" />
+      <rect x="28" y="64" width="8" height="64" fill="#3b7d3c" />
+    </svg>
+  </div>
+  <div class="bottom-text">
+    <a href="https://lasvegasengineering.substack.com" target="_blank">Read More - Substack</a>
+  </div>
+  <script>
+    const sun = document.querySelector('.sun');
+    let glow = 80;
+    let growing = true;
+    function animateSun() {
+      if (growing) {
+        glow += 5;
+        if (glow >= 200) growing = false;
+      } else {
+        glow -= 5;
+        if (glow <= 80) growing = true;
+      }
+      sun.style.boxShadow = `0 0 ${glow}px rgba(255, 255, 100, 0.5)`;
+      requestAnimationFrame(animateSun);
+    }
+    animateSun();
+  </script>
+</body>
+</html>
